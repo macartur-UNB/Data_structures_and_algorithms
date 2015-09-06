@@ -28,7 +28,7 @@ void bubble_sort(vector<int> &array)
 
 int main()
 {
-    int a[] = {20,2,10,15,4};
+    int a[] = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
     vector<int> array(a,a+sizeof(a)/sizeof(int)); 
     bubble_sort(array);
     for(int i=0;i<array.size();i++){ cout << array[i] << " ";    }
