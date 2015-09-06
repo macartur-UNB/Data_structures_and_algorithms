@@ -1,23 +1,28 @@
-
 Data structures and algorithms
 =========
 
-algorightms
------
+Sort Algorightms
+----
 
-sort:
-    n^2:
-        selection_sort
-        insertion_sort
-        bubble_sort
+    1) n^2:
     
-    nlog(n):
-        merge_sort
-        shell_sort
-        quick_sort
-    n:
-        counting_sort
-        radix_sort
+        - selection_sort
+        - insertion_sort
+        - bubble_sort
+    
+    2) nlog(n):
+    
+        - merge_sort
+        - shell_sort
+        - quick_sort
+        
+    3) n:
+    
+       - counting_sort
+       - radix_sort
 
-compression: 
-    Huffman
+Compression algorithms: 
+--------------
+
+    1) Huffman
+
