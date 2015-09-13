@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <string>
+#include <fstream>
+#include <ctime>
 
 using namespace std;
 
@@ -67,18 +70,45 @@ radix_sort(vector<int>  elements)
 	return aux;
 }
 
-int main()
+int main(int argc , char *argv[])
 {
-	int a[]  = { 3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48 };
-	vector<int> elements(a,a+sizeof(a)/sizeof(int));
-	vector<int> result = radix_sort(elements);
-	int size= result.size();
-	for(int i=0;i<size;i++)
-    {
-        if (i)
-            cout << " ";
-        cout << result[i];
+    clock_t t;
+    int data;
+    bool print;
+	vector<int> elements;
+    ifstream infile; 
+
+    if (argc == 1 || argc > 3 ){
+         cout << "try to use ./prog <file_name> [--print]"<<endl;
+         return 0;
     }
-	cout << endl;
+   
+    if (argv[2])
+        print = true;
+    string file = argv[1];
+
+    infile.open(file.c_str()); 
+    while(infile >> data)
+    {
+        elements.push_back(data);
+    }
+    infile.close();
+
+    t = clock();
+	vector<int> result = radix_sort(elements);
+    t = clock() - t;
+    cout << "Time = "<< t << endl;
+
+    if (print)
+    {
+        int size= result.size();
+        for(int i=0;i<size;i++)
+        {
+            if (i)
+                cout << " ";
+            cout << result[i];
+        }
+        cout << endl;
+    }
 	return 0;
 }
